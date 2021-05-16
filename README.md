@@ -42,6 +42,25 @@ result = my_route.match("GET", "/projects/123")
 result.route_params # => { "id" => "123" }
 ```
 
+Advanced usage:
+```crystal
+abstract class RequestHandler
+  abstract def handle
+end
+
+class Projects::Update < RequestHandler
+  def handle
+    # do something
+  end
+end
+
+my_router = KrowdRouter::Router(RequestHandler.class).new
+my_router.add "PUT", "/projects/:id", Projects::Update
+
+result = my_route.match("PUT", "/projects/123")
+result.route.handler # => Projects::Update
+```
+
 
 ## Contributing
 
