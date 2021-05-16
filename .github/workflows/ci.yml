@@ -1,0 +1,28 @@
+name: KrowdRouter CI
+
+on: [pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    container:
+      image: crystallang/crystal:1.0.0
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run linter
+        run: crystal tool format --check
+
+  specs:
+    runs-on: ubuntu-latest
+    container:
+      image: crystallang/crystal:1.0.0
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: crystal spec

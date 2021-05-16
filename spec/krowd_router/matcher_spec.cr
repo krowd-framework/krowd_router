@@ -35,7 +35,7 @@ describe KrowdRouter::Matcher do
         match = KrowdRouter::Matcher(Symbol).new.find("/tags/games/zelda", [route])
 
         match.try(&.route).should eq route
-        match.try(&.params).should eq({ "category" => "games", "name" => "zelda" })
+        match.try(&.params).should eq({"category" => "games", "name" => "zelda"})
       end
     end
   end
