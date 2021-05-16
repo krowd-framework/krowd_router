@@ -1,0 +1,9 @@
+name: krowd_router
+version: 0.1.0
+
+authors:
+  - stephannv <3025661+stephannv@users.noreply.github.com>
+
+crystal: 1.0.0
+
+license: MIT
