@@ -61,7 +61,7 @@ describe "Integrations tests" do
   context "when matches a route with named params" do
     it "returns filled route params" do
       match = my_router.match("GET", "/projects/123/tasks/0")
-      match.try(&.params).should eq({ "id" => "123", "priority" => "0" })
+      match.try(&.params).should eq({"id" => "123", "priority" => "0"})
     end
   end
 
